@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="candinoS6.Views.vEstudiante"
+             Title="vEstudiante">
+    <VerticalStackLayout>
+        <Label 
+            Text="CONSUMO DE REST"
+            FontSize="24" 
+            HorizontalTextAlignment="Center"
+            Padding="25"/>
+
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="105"/>
+                    <ColumnDefinition Width="105"/>
+                    <ColumnDefinition Width="105"/>
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Row="0" Grid.Column="0" Padding="10" BackgroundColor="DarkSalmon" CornerRadius="5">
+                    <Label Grid.Column="0" Text="Código" FontAttributes="Bold"/>
+                </Frame>
+                <Frame Grid.Row="0" Grid.Column="1" Padding="10" BackgroundColor="DarkSalmon" CornerRadius="5">
+                    <Label Grid.Column="1" Text="Nombre" FontAttributes="Bold"/>
+                </Frame>
+                <Frame Grid.Row="0" Grid.Column="2" Padding="10" BackgroundColor="DarkSalmon" CornerRadius="5">
+                    <Label Grid.Column="2" Text="Apellido" FontAttributes="Bold"/>
+                </Frame>
+                <Frame Grid.Row="0" Grid.Column="3" Padding="10" BackgroundColor="DarkSalmon" CornerRadius="5">
+                    <Label Grid.Column="3" Text="Edad" FontAttributes="Bold"/>
+                </Frame>
+            </Grid>
+
+            <CollectionView x:Name="listaEstudiantes"
+                ItemsSource="{Binding uisraeldb}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                        Span="1"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="75"/>
+                                <ColumnDefinition Width="105"/>
+                                <ColumnDefinition Width="105"/>
+                                <ColumnDefinition Width="105"/>
+                            </Grid.ColumnDefinitions>
+                            <Frame Grid.Column="0" Padding="10" CornerRadius="5">
+                                <Label Grid.Column="0" Text="{Binding codigo}" FontAttributes="Bold"/>
+                            </Frame>
+                            <Frame Grid.Column="1" Padding="10" CornerRadius="5">
+                                <Label Grid.Column="1" Text="{Binding nombre}"/>
+                            </Frame>
+                            <Frame Grid.Column="2" Padding="10" CornerRadius="5">
+                                <Label Grid.Column="2" Text="{Binding apellido}"/>
+                            </Frame>
+                            <Frame Grid.Column="3" Padding="10" CornerRadius="5">
+                                <Label Grid.Column="3" Text="{Binding edad}"/>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+
+
+    </VerticalStackLayout>
+</ContentPage>
