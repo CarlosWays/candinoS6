@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="candinoS6.Views.vAgregar"
+             Title="vAgregar">
+    <VerticalStackLayout
+        Spacing="25">
+        <Label 
+            Text="Agregar estudiante"
+            FontSize="20"
+            HorizontalTextAlignment="Center"
+            TextColor="DarkSalmon"/>
+
+        <Entry x:Name="txtNombre"
+               Placeholder="Ingrese el nombre"/>
+
+        <Entry x:Name="txtApellido"
+               Placeholder="Ingrese el apellido"/>
+
+        <Entry x:Name="txtEdad"
+               Placeholder="Ingrese la edad"
+               MaxLength="3"
+               Keyboard="Numeric"/>
+
+        <Button x:Name="btnGuardar"
+                Text="Guardar estudiante"
+                Clicked="btnGuardar_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>
